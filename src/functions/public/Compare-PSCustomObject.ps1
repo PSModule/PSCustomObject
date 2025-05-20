@@ -21,7 +21,7 @@
         }
         $object1 | Compare-PSCustomObject $object2
 
-        Ouptut:
+        Output:
         ```powershell
         Property Left Right Changed
         -------- ---- ----- -------
