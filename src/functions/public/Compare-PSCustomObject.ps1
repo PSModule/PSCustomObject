@@ -1,4 +1,4 @@
-﻿function Compare-PSCustomObject {
+﻿filter Compare-PSCustomObject {
     <#
         .SYNOPSIS
         Compare two PSCustomObjects and return the comparison.
