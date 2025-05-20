@@ -21,7 +21,10 @@ Describe 'PSCustomObject' {
             Value = 2
         }
 
-        $diff = $Left | Compare-PSCustomObject $Right
+        LogGroup 'Diff' {
+            $diff = $Left | Compare-PSCustomObject $Right
+            Write-Host "$($diff | Format-Table | Out-String)"
+        }
 
         $diff | Should -HaveCount 2
         $diff.Property | Should -BeIn @('Name', 'Value')
@@ -41,7 +44,10 @@ Describe 'PSCustomObject' {
             Value = 2
         }
 
-        $diff = $Left | Compare-PSCustomObject $Right -OnlyChanged
+        LogGroup 'Diff' {
+            $diff = $Left | Compare-PSCustomObject $Right -OnlyChanged
+            Write-Host "$($diff | Format-Table | Out-String)"
+        }
 
         $diff | Should -HaveCount 1
         $diff.Property | Should -Be 'Value'
