@@ -1,19 +1,17 @@
-﻿<#
-  .SYNOPSIS
-    This is a general example of how to use the module.
-#>
+﻿$object1 = [PSCustomObject]@{
+    Name  = 'Test'
+    Value = 1
+}
 
-# Import the module
-Import-Module -Name 'PSModule'
+$object2 = [PSCustomObject]@{
+    Name  = 'Test'
+    Value = 2
+}
 
-# Define the path to the font file
-$FontFilePath = 'C:\Fonts\CodeNewRoman\CodeNewRomanNerdFontPropo-Regular.tff'
+$object1 | Compare-PSCustomObject $object2
 
-# Install the font
-Install-Font -Path $FontFilePath -Verbose
-
-# List installed fonts
-Get-Font -Name 'CodeNewRomanNerdFontPropo-Regular'
-
-# Uninstall the font
-Get-Font -Name 'CodeNewRomanNerdFontPropo-Regular' | Uninstall-Font -Verbose
+# Output:
+# Property Left Right Changed
+# -------- ---- ----- -------
+# Name     Test Test    False
+# Value    1    2        True
