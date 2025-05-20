@@ -45,6 +45,30 @@ $object1 | Compare-PSCustomObject $object2
 
 ```
 
+### Example 2: Compare two objects showing only changed properties
+
+This example shows how to compare two objects and get the differences between them.
+
+```powershell
+$object1 = [PSCustomObject]@{
+    Name  = 'Test'
+    Value = 1
+}
+
+$object2 = [PSCustomObject]@{
+    Name  = 'Test'
+    Value = 2
+}
+
+$object1 | Compare-PSCustomObject $object2 -OnlyChanged
+
+# Output:
+# Property Left Right Changed
+# -------- ---- ----- -------
+# Value    1    2        True
+
+```
+
 ### Find more examples
 
 To find more examples of how to use the module, please refer to the [examples](examples) folder.
