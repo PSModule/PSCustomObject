@@ -1,6 +1,6 @@
 # PSCustomObject
 
-PSCustomObject is a PowerShell module for missing PSCustomObject helper functions.
+PSCustomObject is a PowerShell module that provides helper functions for working with PSCustomObject values.
 
 ## Installation
 
@@ -19,7 +19,7 @@ Use PowerShell help and command discovery for module details:
 
 ```powershell
 Get-Command -Module PSCustomObject
-Get-Help <CommandName> -Examples
+Get-Help Compare-PSCustomObject -Examples
 ```
 
 ## Contributing
